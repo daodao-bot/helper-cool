@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
-      DOCKER_HUB_NAMESPACE: ${{ secrets.DOCKER_HUB_NAMESPACE }}
+      DOCKER_HUB_NAMESPACE: daodaobot
       DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
       DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
       APP_NAME: helper-web
