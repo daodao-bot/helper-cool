@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <Header />
-    <Main>
+    <AppHeader />
+    <AppMain>
       <template #center>
         <slot />
       </template>
-    </Main>
-    <Footer />
+    </AppMain>
+    <AppFooter />
   </div>
 </template>
 

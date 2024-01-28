@@ -8,7 +8,11 @@
             class="flex items-end gap-1.5 font-bold text-xl text-gray-900 dark:text-white"
             aria-label="Helper"
           >
-            <Logo class="w-auto h-6" />
+            <img
+              class="w-full h-full object-cover"
+              src="/img/logo.png"
+              alt="logo"
+            >
             <span>Helper</span>
           </NuxtLink>
         </div>
@@ -17,7 +21,10 @@
       <slot name="center">
         <div class="flex justify-center">
           <nav class="flex items-center justify-center gap-4">
-            <NuxtLink to="/" class="hover:text-gray-900 dark:hover:text-white">
+            <NuxtLink
+              to="/"
+              class="hover:text-gray-900 dark:hover:text-white"
+            >
               Home
             </NuxtLink>
             <span class="text-gray-500">|</span>

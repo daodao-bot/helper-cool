@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-const appConfig = useAppConfig()
-
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'

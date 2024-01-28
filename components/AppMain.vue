@@ -3,9 +3,9 @@
 <template>
   <main>
     <UContainer class="mt-8">
-      <slot name="left"></slot>
-      <slot name="center"></slot>
-      <slot name="right"></slot>
+      <slot name="left" />
+      <slot name="center" />
+      <slot name="right" />
     </UContainer>
   </main>
 </template>
