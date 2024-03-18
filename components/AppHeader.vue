@@ -9,7 +9,7 @@
             aria-label="Helper"
           >
             <img
-              class="w-full h-full object-cover"
+              class="h-8 w-8"
               src="/img/logo.png"
               alt="logo"
             >
@@ -26,6 +26,13 @@
               class="hover:text-gray-900 dark:hover:text-white"
             >
               Home
+            </NuxtLink>
+            <span class="text-gray-500">|</span>
+            <NuxtLink
+              to="/math"
+              class="hover:text-gray-900 dark:hover:text-white"
+            >
+              Math
             </NuxtLink>
             <span class="text-gray-500">|</span>
             <NuxtLink
@@ -58,6 +65,7 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <style scoped></style>
