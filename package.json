@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt-ui-pro-template-dashboard",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,18 +9,49 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.40",
+    "@iconify-json/simple-icons": "^1.2.33",
+    "@nuxt/content": "3.5.1",
+    "@nuxt/fonts": "0.11.2",
+    "@nuxt/icon": "1.12.0",
+    "@nuxt/image": "1.10.0",
+    "@nuxt/scripts": "0.11.6",
+    "@nuxt/test-utils": "3.17.2",
+    "@nuxt/ui-pro": "^3.1.1",
+    "@nuxtjs/i18n": "^9.5.4",
+    "@unhead/vue": "^2.0.8",
+    "@unovis/ts": "^1.5.1",
+    "@unovis/vue": "^1.5.1",
+    "@vueuse/nuxt": "^13.1.0",
+    "date-fns": "^4.1.0",
+    "nuxt": "^3.17.2",
+    "prettier": "^3.5.3",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.1.95",
-    "@nuxt/eslint-config": "^0.2.0",
-    "@nuxt/ui": "^2.14.2",
-    "eslint": "^8.57.0",
-    "nuxt": "^3.11.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.2",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "vue-tsc": "^2.0.6"
-  }
+    "@nuxt/eslint": "^1.3.0",
+    "eslint": "^9.26.0",
+    "typescript": "^5.8.3",
+    "vue-tsc": "^2.2.10"
+  },
+  "resolutions": {
+    "unimport": "4.1.1"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "maplibre-gl",
+      "vue-demi"
+    ],
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
+  "packageManager": "pnpm@10.10.0"
 }
