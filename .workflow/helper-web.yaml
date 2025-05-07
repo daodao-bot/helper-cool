@@ -2,7 +2,7 @@ version: '1.0'
 variables:
   NAMESPACE: daodao-bot
   APPLICATION: helper-web
-name: ${APPLICATION}
+name: helper-web
 displayName: ${APPLICATION}
 triggers:
   trigger: auto
@@ -50,10 +50,25 @@ stages:
     steps:
       - step: build@docker
         name: build_docker
-        displayName: 镜像构建
+        displayName: 构建镜像
         type: cert
         certificate: aliyun-cr-daodao-bot
         tag: ${NAMESPACE}/${APPLICATION}:${GITEE_BRANCH}
+        dockerfile: ./Dockerfile
+        context: ''
+        artifacts:
+          - ${BUILD_ARTIFACT}
+        isCache: false
+        parameter: {}
+        notify: []
+        strategy:
+          retry: '0'
+      - step: build@docker
+        name: docker_build
+        displayName: 镜像构建
+        type: cert
+        certificate: aliyun-cr-daodao-bot
+        tag: ${NAMESPACE}/${APPLICATION}:latest
         dockerfile: ./Dockerfile
         context: ''
         artifacts:
