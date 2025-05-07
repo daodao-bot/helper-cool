@@ -3,7 +3,7 @@ variables:
   NAMESPACE: daodao-bot
   APPLICATION: helper-web
 name: helper-web
-displayName: ${APPLICATION}
+displayName: helper-web
 triggers:
   trigger: auto
   push:
