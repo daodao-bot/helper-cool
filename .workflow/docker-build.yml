@@ -1,6 +1,6 @@
 version: '1.0'
-name: helper-web
-displayName: helper-web
+name: docker-build
+displayName: docker-build
 triggers:
   trigger: auto
   push:
@@ -14,34 +14,6 @@ variables:
   NAMESPACE: daodao-bot
   APPLICATION: helper-web
 stages:
-  - name: compile
-    displayName: 编译
-    strategy: naturally
-    trigger: auto
-    executor: []
-    steps:
-      - step: build@nodejs
-        name: build_nodejs
-        displayName: Nodejs 构建
-        nodeVersion: 20.10.0
-        commands:
-          - npm config set registry https://registry.npmmirror.com
-          - npm install -g pnpm
-          - pnpm config set registry https://registry.npmmirror.com
-          - pnpm install
-          - pnpm run crack
-          - pnpm run generate
-        artifacts:
-          - name: BUILD_ARTIFACT
-            path:
-              - ./.output
-        caches:
-          - ~/.npm
-          - ~/.yarn
-          - ~/.pnpm
-        notify: []
-        strategy:
-          retry: '0'
   - name: build
     displayName: 构建
     strategy: naturally
@@ -54,10 +26,9 @@ stages:
         type: cert
         certificate: aliyun-cr-daodao-bot
         tag: ${NAMESPACE}/${APPLICATION}:${GITEE_BRANCH}
-        dockerfile: ./DockerBuilder
+        dockerfile: ./Dockerfile
         context: ''
-        artifacts:
-          - ${BUILD_ARTIFACT}
+        artifacts: []
         isCache: false
         parameter: {}
         notify: []
@@ -69,10 +40,9 @@ stages:
         type: cert
         certificate: aliyun-cr-daodao-bot
         tag: ${NAMESPACE}/${APPLICATION}:latest
-        dockerfile: ./DockerBuilder
+        dockerfile: ./Dockerfile
         context: ''
-        artifacts:
-          - ${BUILD_ARTIFACT}
+        artifacts: []
         isCache: false
         parameter: {}
         notify: []

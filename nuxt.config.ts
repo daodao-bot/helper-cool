@@ -48,6 +48,14 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
+  ssr: true,
+
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
+
   compatibilityDate: '2024-07-11',
 
   eslint: {

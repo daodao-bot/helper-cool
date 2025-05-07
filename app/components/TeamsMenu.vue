@@ -8,7 +8,7 @@ const { t } = useI18n()
 const teams = ref([{
   label: t('menu.home'),
   avatar: {
-    src: '~/assets/img/logo.png',
+    src: 'https://helper.cool/img/logo.png',
     alt: t('menu.home')
   }
 }, {

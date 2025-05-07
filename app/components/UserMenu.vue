@@ -16,7 +16,7 @@ const neutrals = ['slate', 'gray', 'zinc', 'neutral', 'stone']
 const user = ref({
   name: 'Helper',
   avatar: {
-    src: '~/assets/img/logo.png',
+    src: 'https://helper.cool/img/logo.png',
     alt: 'Helper'
   }
 })
