@@ -1,7 +1,4 @@
 version: '1.0'
-variables:
-  NAMESPACE: daodao-bot
-  APPLICATION: helper-web
 name: helper-web
 displayName: helper-web
 triggers:
@@ -13,6 +10,9 @@ triggers:
     paths:
       include:
         - ^.*$
+variables:
+  NAMESPACE: daodao-bot
+  APPLICATION: helper-web
 stages:
   - name: compile
     displayName: 编译
