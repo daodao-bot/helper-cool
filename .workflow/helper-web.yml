@@ -2,7 +2,7 @@ version: '1.0'
 variables:
   NAMESPACE: daodao-bot
   APPLICATION: helper-web
-name: helper-web
+name: ${APPLICATION}
 displayName: ${APPLICATION}
 triggers:
   trigger: auto
