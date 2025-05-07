@@ -1,0 +1,65 @@
+version: '1.0'
+variables:
+  NAMESPACE: daodao-bot
+  APPLICATION: helper-web
+name: ${APPLICATION}
+displayName: ${APPLICATION}
+triggers:
+  trigger: auto
+  push:
+    tags:
+      prefix:
+        - t-
+    paths:
+      include:
+        - ^.*$
+stages:
+  - name: compile
+    displayName: 编译
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@nodejs
+        name: build_nodejs
+        displayName: Nodejs 构建
+        nodeVersion: 20.10.0
+        commands:
+          - npm config set registry https://registry.npmmirror.com
+          - npm install -g pnpm
+          - pnpm config set registry https://registry.npmmirror.com
+          - pnpm install
+          - pnpm run crack
+          - pnpm run build
+        artifacts:
+          - name: BUILD_ARTIFACT
+            path:
+              - ./.output
+        caches:
+          - ~/.npm
+          - ~/.yarn
+          - ~/.pnpm
+        notify: []
+        strategy:
+          retry: '0'
+  - name: build
+    displayName: 构建
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@docker
+        name: build_docker
+        displayName: 镜像构建
+        type: cert
+        certificate: aliyun-cr-daodao-bot
+        tag: ${NAMESPACE}/${APPLICATION}:${GITEE_BRANCH}
+        dockerfile: ./Dockerfile
+        context: ''
+        artifacts:
+          - ${BUILD_ARTIFACT}
+        isCache: false
+        parameter: {}
+        notify: []
+        strategy:
+          retry: '0'

@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "crack": "sh ./.crack.sh",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
