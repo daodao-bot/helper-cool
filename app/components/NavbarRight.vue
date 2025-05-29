@@ -49,7 +49,7 @@ const switchLocalePath = async (locale: 'en' | 'zh') => {
   <UColorModeButton />
 
   <UButton
-    to="https://gitee.com/daodao-bot/helper-web"
+    to="https://gitee.com/daodao-bot/helper-cool"
     target="_blank"
     icon="i-simple-icons-github"
     aria-label="GitHub"

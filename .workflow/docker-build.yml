@@ -6,13 +6,13 @@ triggers:
   push:
     tags:
       prefix:
-        - t-
+        - 2
     paths:
       include:
         - ^.*$
 variables:
   NAMESPACE: daodao-bot
-  APPLICATION: helper-web
+  APPLICATION: helper-cool
 stages:
   - name: build
     displayName: 构建

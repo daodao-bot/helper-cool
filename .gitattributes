@@ -1,1 +1,11 @@
-*.*  text eol=lf
+* text=auto
+
+*.sh text eol=lf
+*.bat text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.svg binary
