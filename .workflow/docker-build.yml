@@ -15,7 +15,7 @@ variables:
   APPLICATION: helper-cool
 stages:
   - name: build
-    displayName: 构建
+    displayName: 构建1
     strategy: naturally
     trigger: auto
     executor: []
