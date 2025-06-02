@@ -33,6 +33,13 @@ useSeoMeta({
   twitterImage: 'https://assets.hub.nuxt.com/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL2Rhc2hib2FyZC10ZW1wbGF0ZS5udXh0LmRldiIsImlhdCI6MTczOTQ2MzU2N30._VElt4uvLjvAMdnTLytCInOajMElzWDKbmvOaMZhZUI.jpg?theme=light',
   twitterCard: 'summary_large_image'
 })
+
+if (window?.location?.hostname === 'helper.cool') {
+  const hm = document.createElement('script')
+  hm.src = 'https://hm.baidu.com/hm.js?bf4237a9abb5683c1567548d79573229'
+  const s = document.getElementsByTagName('script')[0]
+  s?.parentNode?.insertBefore(hm, s)
+}
 </script>
 
 <template>
